@@ -21,6 +21,8 @@ otpappend() {
 
 # alias otpappend="wl-paste | zbarimg -q --raw - | pass otp append "
 
+# Command for disabling laptop main keyboard
+alias dk="hyprctl eval \"hl.device({ name = 'at-translated-set-2-keyboard', enabled = false })\""
 
 alias pacfind="pacman -Q | grep"
 
