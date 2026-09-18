@@ -37,4 +37,10 @@ rsync -a --remove-source-files --progress "$PHONE"/Movies/* "$HD/var/backups/pho
 
 fi
 
+# Backup minecraft survival world
+echo "Backing up minecraft world"
+rsync -a --progress "$HOME/.local/share/minecraft/saves/Survival 17/" "$HD/var/backups/minecraft/survival/"*/
+## TODO: rename the folder after a sync actually happens
+#mv -- $HD/var/backups/minecraft/survival/* $HD/var/backups/minecraft/survival/"$(date +%F)"
+#TODO: Add rclone list to also send backup to cloud
 
