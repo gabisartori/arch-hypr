@@ -1,7 +1,11 @@
 HD="$HOME/mnt/hdd1tb"
+PHONEMNT="$HOME/mnt/phone"
 PHONE="$HOME/mnt/phone/Armazenamento interno"
 WHATSAPP="$PHONE/Android/media/com.whatsapp/WhatsApp/Media"
 
+# Phone related syncs
+if [ -d $PHONEMNT ] && [ "$(ls -A "$PHONEMNT")" ]; then
+echo "Backing up phone data"
 # Send songs from PC to phone
 rsync -av --update "$HOME/musicas/" "$PHONE/Music"
 
@@ -30,4 +34,7 @@ rsync -a --remove-source-files --progress "$PHONE"/Pictures/*/ "$HD/var/backups/
 
 ## Instagram and Whatsapp saved stories to camera
 rsync -a --remove-source-files --progress "$PHONE"/Movies/* "$HD/var/backups/phone/downloads"
+
+fi
+
 
