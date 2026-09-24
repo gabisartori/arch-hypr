@@ -31,3 +31,8 @@ alias pacfind="pacman -Q | grep"
 cdd() { cd "$@"; }
 cs() { builtin cd "$@" && ls; }
 alias cd=cs
+
+# Set envs for specific apps that fuck up XDG architecture
+alias adb='HOME="$XDG_DATA_HOME"/android adb'
+alias nvidia-settings="nvidia-settings --config='$XDG_CONFIG_HOME'/nvidia/settings"
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
