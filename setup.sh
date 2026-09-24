@@ -16,6 +16,7 @@ ln -sf "$(pwd)"/scripts/bashrc ~/.bashrc
 ln -sf "$(pwd)"/scripts/bash_aliases ~/.bash_aliases
 ln -sf "$(pwd)"/scripts/bash_venv ~/.bash_venv
 ln -sf "$(pwd)"/scripts/bash_autocomplete ~/.bash_autocomplete
+ln -sf "$(pwd)"/scripts/bash_profile ~/.bash_profile
 
 # Setup man-pages
 mandb
