@@ -23,6 +23,16 @@ hl.bind(MOD2 .. " + " .. MOD4 .. " + SHIFT + S", hl.dsp.exec_cmd(ScreenshotSecon
 -- Windows and workspaces
 
 hl.bind(MOD4 .. " + F4", hl.dsp.window.close()) -- Close active window
+hl.bind("ESCAPE", function()
+  local window = hl.get_active_window()
+  if window ~= nil and window.floating then
+    hl.dispatch(hl.dsp.window.close())
+  else
+    return { ok = false }
+  end
+end, { auto_consuming = true }
+)
+
 hl.bind(MOD4 .. " + V", hl.dsp.window.float({ action = "toggle" })) -- Togfle floating for active window
 hl.bind(MOD4 .. " + P", hl.dsp.window.pseudo()) -- TODO: name this
 hl.bind(MOD4 .. " + J", hl.dsp.layout("togglesplit")) -- TODO: Not working
